@@ -1,4 +1,4 @@
-# Node Modules Directory Scanner
+# GO Kill Node Modules - Node Modules Directory Scanner
 
 This application scans your file system for `node_modules` directories and prints out their locations and sizes. The intended use is for developers who frequently work with node.js and accumulate a large number of `node_modules` directories that take up disk space.
 
@@ -7,16 +7,27 @@ This application scans your file system for `node_modules` directories and print
 2. Calculates the size of each `node_modules` found.
 3. Prints the path and size of each `node_modules` folder.
 
+## Known Issues
+(Feel free to contribute)
+- [ ] When deleting multiple directories at the same time, it crashes
+- [ ] The UI needs some improvements
+- [ ] Reclaimed space (after delete) is not being calculated
+
+
 ## Installation
 Assuming you have a working Go environment set up:
 
-sh git clone https://github.com/username/repository.git cd repository go build -o scanner
+`git clone https://github.com/mksarifo/go_kill_node_modules.git`
+
+`cd repository`
+
+`go build`
 
 ## Usage
 After installation, you can run the application with:
-sh ./scanner
+`./nmkill /path/to/scan`
 
-You will be prompted to input a directory path to start the scan.
+It will scan the provided path and show a list of results.
 
 ## Warning
 This tool only reports on the size of `node_modules` directories. It does NOT automatically delete them. Please be cautious and make sure you no longer need the content before deleting any `node_modules` directory.
